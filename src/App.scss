@@ -1,0 +1,94 @@
+$typography-primary: 10px;
+$typography-secondary: 12px;
+$typography-third: 14px;
+$typography-fourth: 16px;
+$green: #0ba248;
+$yellow: #f7c544;
+$orange-secondary: #ff6613;
+$red: #eb3b46;
+$blue: #4b65ec;
+$grey: #dbdbdb;
+$mustard: #ecac08;
+$accent: #46505e;
+$accentDark: #2f3640;
+$basic-border-radius: 4px;
+$lightGrey: #f3f3f3;
+#root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	height: 100%;
+}
+* {
+	margin: 0;
+}
+
+.app-header-container {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	height: 64px;
+	z-index: 100;
+}
+
+.screen-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	transition: all 0.3s ease-out;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 22px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #b8b8b8;
+	border-radius: 20px;
+	border: 6px solid transparent;
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #a1a1a1;
+}
+
+div:focus {
+	outline: none;
+}
+
+.handle-wrapper {
+	div {
+		width: 5px !important;
+		right: -1px !important;
+		border-radius: $basic-border-radius;
+	}
+	div:hover {
+		background-color: rgba($accent, 0.5);
+		transition: background-color 0.3s;
+		z-index: 1;
+		animation: blink 1.2s infinite;
+	}
+	div:active {
+		background-color: rgba($accent, 0.85);
+		transition: background-color 0.3s;
+		z-index: 1;
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,127 @@
+@import "../../App.scss";
+
+.people-screen {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.people-cards-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 1rem;
+}
+
+.new-person-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 0.6em;
+	border-radius: $basic-border-radius;
+	background-color: #efefef;
+	color: rgb(45, 45, 45);
+	transition: transform 0.2s ease-in-out;
+	border: 1px dashed #9c9c9c;
+	max-width: 500px;
+	max-height: 300px;
+	&:hover {
+		box-shadow: 0px 8px 32px -16px rgba(0, 0, 0, 0.25);
+		-webkit-box-shadow: 0px 8px 32px -16px rgba(0, 0, 0, 0.25);
+		-moz-box-shadow: 0px 8px 32px -16px rgba(0, 0, 0, 0.25);
+		transform: translateY(-3px);
+		cursor: pointer;
+	}
+}
+
+.person-card-container {
+	border-radius: $basic-border-radius;
+	background-color: white;
+	color: black;
+	box-shadow: 0px 8px 32px -16px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0px 8px 32px -16px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 8px 32px -16px rgba(0, 0, 0, 0.25);
+	transition: transform 0.2s ease-in-out;
+	border: 1px solid #dee2e6;
+	max-height: 340px;
+	max-width: 500px;
+
+	.person-title {
+		text-overflow: ellipsis;
+		color: $accent;
+		padding: 0.5em 1rem;
+		color: $accent;
+		border-top-left-radius: $basic-border-radius;
+		border-top-right-radius: $basic-border-radius;
+		font-weight: bold;
+		overflow: hidden;
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	.card-body {
+		padding: 0.5em 1rem;
+
+		.person-name {
+			font-size: 1.4rem;
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+		}
+
+		.person-role {
+			font-size: 1rem;
+			margin-bottom: 1rem;
+			max-height: 5rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+
+		.person-status {
+			font-size: 1rem;
+			font-weight: bold;
+
+			&.Activo {
+				color: #28a745;
+			}
+
+			&.Finalizado {
+				color: #dc3545;
+			}
+		}
+
+		.person-dates {
+			font-size: 0.8rem;
+			color: #6c757d;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.person-card-footer {
+		padding: 4px;
+		border-bottom-left-radius: $basic-border-radius;
+		border-bottom-right-radius: $basic-border-radius;
+		background-color: #f8f9fa;
+		display: flex;
+		justify-content: flex-end;
+		gap: 4px;
+	}
+}
+
+.new-person-form-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	.fields-container {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}

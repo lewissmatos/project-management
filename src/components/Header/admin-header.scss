@@ -1,0 +1,34 @@
+@import "../../App.scss";
+
+.app-header-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 6px 20px;
+	background-color: #f8f8f8;
+	color: white;
+	hedaer-icon {
+		color: $accent;
+	}
+}
+
+.app-header-gradient-bar {
+	background: $accent;
+	height: 8px;
+}
+
+.header-text {
+	color: $accent;
+	font-size: 14px !important;
+	max-width: 200px;
+	font-size: 0.8rem;
+	font-weight: 400;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1; /* Limit the number of lines before showing ellipsis */
+	-webkit-box-orient: vertical;
+}
+
+.header-icon {
+	color: $accent;
+}

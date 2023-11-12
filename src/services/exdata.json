@@ -1,0 +1,131 @@
+[
+	{
+		"id": "43",
+		"name": "Por Hacer",
+		"tasks": [
+			{
+				"id": "74",
+				"projectId": "2vgiunpm",
+				"title": "Integrar Notificaciones por Correo Electrónico",
+				"description": "Implementar notificaciones por correo electrónico para eventos en el CRM",
+				"createdAt": "2023-04-05",
+				"finishedAt": "",
+				"priority": "Baja",
+				"columnId": "43"
+			}
+		],
+		"projectId": "2vgiunpm",
+		"color": "#269be8"
+	},
+	{
+		"id": "35617",
+		"name": "En Progreso",
+		"tasks": [
+			{
+				"id": "21856",
+				"projectId": "2vgiunpm",
+				"title": "Actualizar Infraestructura de Red",
+				"description": "Actualizar hardware y optimizar la configuración de la red",
+				"createdAt": "2023-05-10",
+				"finishedAt": "2023-06-01",
+				"priority": "Media",
+				"columnId": "35617"
+			},
+			{
+				"id": "765432",
+				"projectId": "2vgiunpm",
+				"title": "Implementar Medidas de Seguridad",
+				"description": "Mejorar los protocolos de seguridad para la red",
+				"createdAt": "2023-06-10",
+				"finishedAt": "",
+				"priority": "Alta",
+				"columnId": "35617"
+			},
+			{
+				"id": "819",
+				"projectId": "2vgiunpm",
+				"title": "Diseñar Interfaz de Usuario",
+				"description": "Crear una interfaz de usuario amigable con principios de diseño modernos",
+				"createdAt": "2023-02-15",
+				"finishedAt": "2023-03-05",
+				"priority": "Media",
+				"columnId": "35617"
+			},
+			{
+				"id": "27",
+				"projectId": "2vgiunpm",
+				"title": "Implementar Sistema de Autenticación",
+				"description": "Desarrollar autenticación de usuarios para la aplicación",
+				"createdAt": "2023-01-20",
+				"finishedAt": "2023-02-10",
+				"priority": "Alta",
+				"columnId": "35617"
+			}
+		],
+		"projectId": "2vgiunpm",
+		"color": "#35b327"
+	},
+	{
+		"id": "987",
+		"name": "Completado",
+		"tasks": [
+			{
+				"id": "789",
+				"projectId": "2vgiunpm",
+				"title": "Documentar Actualizaciones de la Red",
+				"description": "Crear documentación completa para la infraestructura de red actualizada",
+				"createdAt": "2023-06-05",
+				"finishedAt": "2023-06-15",
+				"priority": "Baja",
+				"columnId": "987",
+				"assignedTo": {
+					"id": "Hsd21",
+					"name": "LEWIS MATOS",
+					"role": "Lead",
+					"status": "Activo"
+				}
+			},
+			{
+				"id": "456",
+				"projectId": "2vgiunpm",
+				"title": "Realizar Capacitación de Usuarios",
+				"description": "Organizar y llevar a cabo sesiones de capacitación para los usuarios del sistema CRM",
+				"createdAt": "2023-04-10",
+				"finishedAt": "2023-04-20",
+				"priority": "Media",
+				"columnId": "987",
+				"assignedTo": null
+			},
+			{
+				"id": "123",
+				"projectId": "2vgiunpm",
+				"title": "Implementar la Aplicación en Producción",
+				"description": "Implementar la aplicación en el servidor de producción para acceso público",
+				"createdAt": "2023-03-15",
+				"finishedAt": "2023-03-20",
+				"priority": "Alta",
+				"columnId": "987",
+				"assignedTo": { "id": 2, "name": "Jane Smith", "role": "Frontend" }
+			},
+			{
+				"id": "982",
+				"projectId": "2vgiunpm",
+				"title": "Optimizar Consultas de la Base de Datos",
+				"description": "Mejorar el rendimiento de las consultas de la base de datos para el sistema CRM",
+				"createdAt": "2023-03-01",
+				"finishedAt": "2023-03-20",
+				"priority": "Alta",
+				"columnId": "987"
+			}
+		],
+		"projectId": "2vgiunpm",
+		"color": "#e3bc59"
+	},
+	{
+		"id": "41532479",
+		"name": "asdasdsad",
+		"color": "#647bbe",
+		"tasks": [],
+		"projectId": "2"
+	}
+]
