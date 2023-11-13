@@ -167,13 +167,13 @@ export const checkboxBackgrounds: any = {
 	},
 	abi: {
 		"&.Mui-checked": {
-			color: Colors.abiYellow,
+			color: Colors.yellow,
 		},
 		color: "#EFEFEF",
 	},
 	abiDark: {
 		"&.Mui-checked": {
-			color: Colors.abiYellow,
+			color: Colors.yellow,
 		},
 		color: "#656872",
 	},
@@ -223,7 +223,7 @@ export const buttonBackgrounds: ButtonBackgroundsType = {
 		},
 	},
 	abi: {
-		backgroundColor: `${Colors.abiYellow}`,
+		backgroundColor: `${Colors.yellow}`,
 		":hover": {
 			backgroundColor: `${Colors.mustard}`,
 		},

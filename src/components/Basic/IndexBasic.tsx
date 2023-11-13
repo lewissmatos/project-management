@@ -7,8 +7,6 @@ import BasicLabel from "./BasicLabel";
 import BasicModal from "./BasicModal";
 import BasicSelect from "./BasicSelect";
 import BasicTooltip from "./BasicTooltip";
-import Table from "./Table";
-import BasicExternalLayout from "./BasicExternalLayout";
 import BasicSkeleton from "./BasicSkeleton";
 export {
 	BasicAccordion,
@@ -20,7 +18,5 @@ export {
 	BasicModal,
 	BasicSelect,
 	BasicTooltip,
-	Table,
-	BasicExternalLayout,
 	BasicSkeleton,
 };

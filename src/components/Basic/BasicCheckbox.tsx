@@ -2,7 +2,7 @@ import { Checkbox, CheckboxProps, FormControlLabel } from "@mui/material";
 import { FC } from "react";
 import { CSS } from "styled-components/dist/types";
 import { Colors } from "../../styles/colors";
-import { UseFormRegister, FieldValues } from "react-hook-form";
+//import { UseFormRegister, FieldValues } from "react-hook-form";
 import SquareRoundedIcon from "@mui/icons-material/SquareRounded";
 import "./basic-style.scss";
 
