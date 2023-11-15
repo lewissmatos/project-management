@@ -33,6 +33,7 @@ function CircularProgressWithLabel(
 			></PriorityHighIcon>
 		),
 	};
+
 	return (
 		<Box sx={{ position: "relative", display: "inline-flex" }}>
 			<CircularProgress variant="determinate" {...props} />

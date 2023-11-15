@@ -6,6 +6,7 @@ export interface IProject {
 	createdAt: string;
 	endDate: string;
 	finishedAt: string;
+	userId: number | string;
 }
 
 export type ProjectStatus = "Activo" | "Finalizado";
@@ -38,4 +39,14 @@ export interface IPerson {
 	role: string;
 	createAt: string;
 	status: "Activo" | "Inactivo";
+}
+
+export interface IUser {
+	id: number | string;
+	name: string;
+	lastname: string;
+	email: string;
+	password: string;
+	role: string;
+	createAt: string;
 }

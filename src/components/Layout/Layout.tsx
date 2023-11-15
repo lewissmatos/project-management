@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import AppHeader from "../Header/AppHeader";
 
 const LayoutComponent = () => (
 	<Grid
@@ -7,6 +8,7 @@ const LayoutComponent = () => (
 		xs={12}
 		sx={{
 			padding: { xs: "1rem 0", md: "20px" },
+			mt: "44px",
 		}}
 	>
 		<Outlet />
@@ -23,7 +25,12 @@ const Layout = () => {
 					transition: "all 0.3s ease-in-out",
 				}}
 			>
-				<LayoutComponent />
+				<Grid container spacing={0}>
+					<Grid item xs={12}>
+						<AppHeader xs={12} />
+					</Grid>
+					<LayoutComponent />
+				</Grid>
 			</Grid>
 		</Grid>
 	);

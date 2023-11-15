@@ -1,0 +1,29 @@
+@import "../../App.scss";
+
+.login-screen {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+.login-form__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 340px;
+	gap: 20px;
+}
+
+.link {
+	color: #3377bf;
+	transition: all 0.2s ease-in-out;
+	&:hover {
+		color: #2863a3;
+		text-decoration: underline;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+	}
+}

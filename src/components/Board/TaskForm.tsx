@@ -45,7 +45,8 @@ const TaskForm: FC<TaskFormProps> = ({
 			[e.target.name]: e.target.value,
 		});
 	};
-	const disabledButton = !taskToEdit?.title || !taskToEdit?.description;
+	const disabledButton =
+		!taskToEdit?.title || !taskToEdit?.description || !taskToEdit?.priority;
 
 	const onCreateNewTask = () => {
 		if (task?.id) {

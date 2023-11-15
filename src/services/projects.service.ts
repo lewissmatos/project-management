@@ -3,10 +3,20 @@ import { IProject } from "../utils/types";
 import { generateId } from "../utils/utils.app";
 import { getData, setData } from "./localStorage.service";
 import { deleteAllColumnsByProject } from "./tasks.service";
+import { getLoggedUser } from "./auth.service";
 
 const getAllProjects = () => {
 	const projects = getData("projects") || [];
 	return projects;
+};
+
+const getAllProjectByUserId = (id: string | number) => {
+	const projects = getData("projects") || [];
+
+	const filteredProjects = projects.filter(
+		(item: IProject) => item?.userId?.toString() === id?.toString()
+	);
+	return filteredProjects;
 };
 
 const getProject = (id: string | number) => {
@@ -19,11 +29,13 @@ const getProject = (id: string | number) => {
 
 const createProject = (project: IProject) => {
 	const projects = getAllProjects();
+	const user = getLoggedUser();
 	const newProject = {
 		...project,
 		id: generateId("projects"),
 		createdAt: dayjs().format("YYYY-MM-DD, HH:mm"),
 		status: "Activo",
+		userId: user?.id,
 	} as IProject;
 	projects?.unshift(newProject);
 	setData("projects", projects);
@@ -50,4 +62,5 @@ export {
 	createProject,
 	editProject,
 	deleteProject,
+	getAllProjectByUserId,
 };

@@ -6,13 +6,17 @@ import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { BasicButton, BasicModal } from "../Basic";
 import NewProjectForm from "./NewProjectForm";
 import { useState } from "react";
-import { getAllProjects } from "../../services/projects.service";
+import { getAllProjectByUserId } from "../../services/projects.service";
 import PersonIcon from "@mui/icons-material/Person";
 import { useNavigate } from "react-router-dom";
+import { getLoggedUser } from "../../services/auth.service";
 
 const ProjectsScreen = () => {
 	const navigate = useNavigate();
-	const [projects, setProjects] = useState<IProject[]>(getAllProjects());
+
+	const [projects, setProjects] = useState<IProject[]>(
+		getAllProjectByUserId(getLoggedUser()?.id)
+	);
 	const [openNewProjectModal, setOpenNewProjectModal] = useState(false);
 	const [projectToEdit, setProjectToEdit] = useState({} as IProject);
 

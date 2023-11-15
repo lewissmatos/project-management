@@ -1,6 +1,5 @@
 import BasicAccordion from "./BasicAccordion";
 import BasicButton from "./BasicButton";
-import BasicCheckbox from "./BasicCheckbox";
 import BasicIconButton from "./BasicIconButton";
 import BasicInput from "./BasicInput";
 import BasicLabel from "./BasicLabel";
@@ -11,7 +10,6 @@ import BasicSkeleton from "./BasicSkeleton";
 export {
 	BasicAccordion,
 	BasicButton,
-	BasicCheckbox,
 	BasicIconButton,
 	BasicInput,
 	BasicLabel,

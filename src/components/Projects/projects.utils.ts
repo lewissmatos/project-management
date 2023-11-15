@@ -17,7 +17,10 @@ export const getProjectProegress = (project: IProject) => {
 		color = Colors.abiOrange;
 	} else if (projectLeftTimeRest > 33 && projectLeftTimeRest <= 66) {
 		color = Colors.yellow;
-	} else color = Colors.green;
+	} else {
+		color = Colors.green;
+		projectLeftTimeRest = 100;
+	}
 
 	if (projectLeftTimeRest === 100 && project.status === "Activo") {
 		color = Colors.red;

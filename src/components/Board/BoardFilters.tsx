@@ -64,6 +64,7 @@ const BoardFilters: FC<BoardFiltersProps> = ({
 					label="Prioridad"
 					size="small"
 				>
+					<MenuItem value="">Todas</MenuItem>
 					<MenuItem value="Baja">Baja</MenuItem>
 					<MenuItem value="Media">Media</MenuItem>
 					<MenuItem value="Alta">Alta</MenuItem>
