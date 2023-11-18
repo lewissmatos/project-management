@@ -1,10 +1,11 @@
 import { Box, Typography } from "@mui/material";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { IProject, IColumn, IPerson } from "../../utils/types";
 import BoardColumnsContainer from "./BoardColumnsContainer";
 import BoardColumn from "./BoardColumn";
-import { BasicIconButton } from "../Basic";
+import { BasicButton, BasicIconButton } from "../Basic";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import DataUsageOutlinedIcon from "@mui/icons-material/DataUsageOutlined";
 import { getProject } from "../../services/projects.service";
 import {
 	addColumn,
@@ -21,6 +22,8 @@ type BoardFiltersProps = {
 };
 export type ColumnData = { name: string; color: string };
 const BoardScreen = () => {
+	const navigate = useNavigate();
+
 	const { projectId } = useParams();
 
 	const [project, setProject] = useState<IProject>(
@@ -101,11 +104,29 @@ const BoardScreen = () => {
 			[e.target.name]: e.target.value,
 		});
 	};
+
+	const onGoToReports = () => {
+		navigate(`/dashboard/projects/${projectId}/reports/`);
+	};
 	return (
 		<Box className="board-screen">
-			<Typography sx={{ fontSize: 50, mb: 2 }}>
-				Tablero - {project?.name}
-			</Typography>
+			<Box
+				sx={{
+					display: "flex",
+					justifyContent: "space-between",
+					mb: 2,
+					alignItems: "center",
+				}}
+			>
+				<Typography sx={{ fontSize: 50 }}>Tablero - {project?.name}</Typography>
+				<BasicButton
+					onClick={onGoToReports}
+					endIcon={<DataUsageOutlinedIcon />}
+				>
+					<span>Ver reportes</span>
+				</BasicButton>
+			</Box>
+
 			<BoardFilters
 				filters={filters}
 				setFilters={setFilers}

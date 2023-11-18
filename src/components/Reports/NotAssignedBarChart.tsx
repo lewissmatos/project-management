@@ -66,9 +66,9 @@ const NotAssignedBarChart = () => {
 		return result;
 	};
 
-	const labels = transformData(
-		getAllColumnsByProject(projectId as string)
-	)?.map((column) => column.name);
+	const labels = getAllColumnsByProject(projectId as string)?.map(
+		(column: IColumn) => column.name
+	);
 
 	const state = {
 		series: transformData(getAllColumnsByProject(projectId as string)),

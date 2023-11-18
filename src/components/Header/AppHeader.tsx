@@ -17,11 +17,20 @@ const AppHeader = ({ xs }: { xs: number }) => {
 		window.location.reload();
 	};
 
+	const onGoToHome = () => {
+		navigate("/");
+	};
+
 	return (
 		<Grid item xs={xs} className="app-header-container">
 			<Box className="app-header-gradient-bar" />
 			<Box className="app-header-content">
-				<Typography sx={{ fontSize: 30, mr: 4 }}>SGProyectos</Typography>
+				<Typography
+					onClick={onGoToHome}
+					sx={{ fontSize: 30, mr: 4, cursor: "pointer" }}
+				>
+					SGProyectos
+				</Typography>
 				<Box
 					sx={{
 						display: "flex",

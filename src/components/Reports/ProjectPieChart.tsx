@@ -20,13 +20,13 @@ const ProjectPieChart = () => {
 	);
 
 	const state = {
-		series: series,
+		series,
 		options: {
 			chart: {
 				width: 380,
 				type: "pie",
 			},
-			labels: labels,
+			labels,
 			fill: {
 				colors,
 			},

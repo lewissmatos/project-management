@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { IColumn, ITask } from "../utils/types";
+import { IColumn, IStoredFile, ITask } from "../utils/types";
 import { generateId } from "../utils/utils.app";
 import { getData, setData } from "./localStorage.service";
 import { ColumnData } from "../components/Board/BoardScreen";
@@ -12,6 +12,7 @@ const getAllColumnsByProject = (projectId: string | number) => {
 	);
 	return columns;
 };
+
 const getAllColumns = () => {
 	const allColumns = getData("columns") || [];
 	return allColumns;
@@ -149,6 +150,38 @@ const deleteTask = (taskId: string | number, columnId: string | number) => {
 	}
 };
 
+const storeFile = (file: File): any => {
+	const reader = new FileReader();
+
+	let serializedFile = "";
+	reader.onload = (event) => {
+		const content = event.target?.result as string;
+
+		const storedFile: IStoredFile = {
+			name: file.name,
+			type: file.type,
+			content,
+		};
+
+		serializedFile = JSON.stringify(storedFile);
+	};
+
+	reader.readAsText(file);
+
+	return serializedFile;
+};
+
+const getFile = (): IStoredFile | null => {
+	const serializedFile = localStorage.getItem("storedFile");
+
+	if (serializedFile) {
+		const storedFile: IStoredFile = JSON.parse(serializedFile);
+		return storedFile;
+	}
+
+	return null;
+};
+
 export {
 	getAllColumnsByProject,
 	addColumn,
@@ -159,4 +192,6 @@ export {
 	editTask,
 	moveTask,
 	deleteTask,
+	storeFile,
+	getFile,
 };

@@ -119,6 +119,7 @@ const BoardColumn: FC<BoardColumnProps> = ({
 				title="Crear tarea"
 				open={openCreateTaskModal}
 				onClose={handleCloseTaskDetailsModal}
+				paperProps={{ sx: { width: "60vw" } }}
 			>
 				<TaskForm
 					column={column}

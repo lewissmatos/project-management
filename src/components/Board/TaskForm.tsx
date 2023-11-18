@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import { IColumn, ITask } from "../../utils/types";
+import { FC, useRef, useState } from "react";
+import { IColumn, IStoredFile, ITask } from "../../utils/types";
 import {
 	Autocomplete,
 	Box,
@@ -20,6 +20,7 @@ import {
 import BasicDialog from "../Basic/BasicDialog";
 import { getAllPeople } from "../../services/people.service";
 import { generateStyle } from "../utils/shared-components.utils";
+
 type TaskFormProps = {
 	task?: ITask;
 	column?: IColumn;
@@ -36,6 +37,7 @@ const TaskForm: FC<TaskFormProps> = ({
 	hideButtons,
 }) => {
 	const [taskToEdit, setTaskToEdit] = useState({ ...task } as ITask);
+	const fileInputRef = useRef<HTMLInputElement | null>(null);
 
 	const people = getAllPeople(false);
 	const [openConfirmDeleteTask, setOpenConfirmDeleteTask] = useState(false);
@@ -62,6 +64,27 @@ const TaskForm: FC<TaskFormProps> = ({
 		deleteTask(task?.id as string, column?.id as string);
 		setColumns(getAllColumnsByProject(column?.projectId as string));
 		onClose();
+	};
+
+	const onFileChange = (e: any) => {
+		const files = e.target.files;
+		if (files && files.length > 0) {
+			const file = files[0];
+			const reader = new FileReader();
+			reader.onload = (e: any) => {
+				const fileData = e.target.result;
+				const newFile: IStoredFile = {
+					name: file.name as string,
+					type: file.type,
+					content: fileData,
+				};
+				setTaskToEdit({
+					...taskToEdit,
+					files: [...(taskToEdit?.files || []), newFile],
+				});
+			};
+			reader.readAsDataURL(file);
+		}
 	};
 
 	return (
@@ -143,6 +166,14 @@ const TaskForm: FC<TaskFormProps> = ({
 							}}
 						/>
 					</Box>
+					<input
+						type="file"
+						id="fileInput"
+						accept="image/*"
+						ref={fileInputRef}
+						style={{ display: "none" }}
+						onChange={onFileChange}
+					/>
 				</Box>
 				{!hideButtons && (
 					<Box

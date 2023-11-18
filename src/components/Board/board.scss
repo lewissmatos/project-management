@@ -99,15 +99,14 @@
 		padding: 0.5em;
 		border-radius: 0px 4px 4px 0px;
 		width: 250px;
-		max-height: 160px;
+		max-height: 1750px;
 		overflow: hidden;
-
 		.task-title {
 			margin-bottom: 0.5em;
 			font-size: 15px;
 
 			display: -webkit-box;
-			-webkit-line-clamp: 2; /* Set the maximum number of lines */
+			-webkit-line-clamp: 2;
 			-webkit-box-orient: vertical;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -120,9 +119,8 @@
 		.task-description {
 			margin-bottom: 0.5em;
 			font-size: 14px;
-
 			display: -webkit-box;
-			-webkit-line-clamp: 4; /* Set the maximum number of lines */
+			-webkit-line-clamp: 4;
 			-webkit-box-orient: vertical;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -136,6 +134,22 @@
 			font-size: 12px;
 			font-weight: bold;
 			color: $accent;
+			margin-bottom: 0.5em;
+		}
+		.task-files {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 0.5em;
+			font-size: 12px;
+			font-weight: bold;
+			color: $accent;
+			span {
+				white-space: normal;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 		}
 	}
 }

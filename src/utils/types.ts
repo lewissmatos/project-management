@@ -21,6 +21,7 @@ export interface ITask {
 	priority: IProjectTaskPriority;
 	columnId?: number | string;
 	assignedTo?: IPerson | null;
+	files?: IStoredFile[];
 }
 
 type IProjectTaskPriority = "Alta" | "Media" | "Baja";
@@ -49,4 +50,10 @@ export interface IUser {
 	password: string;
 	role: string;
 	createAt: string;
+}
+
+export interface IStoredFile {
+	name: string;
+	type: string;
+	content: string;
 }
